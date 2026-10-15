@@ -1,0 +1,167 @@
+﻿@import "tailwindcss";
+
+:root {
+  --theme-bg-widget: rgba(30, 30, 30, 0.85); /* fallback background */
+  --theme-bg-row: rgba(45, 45, 45, 0.8);
+  --theme-icon-bg: rgba(60, 60, 60, 0.8);
+  --theme-border-color: #444444;
+  --theme-text-main: #E0E0E0;
+  --theme-text-header: #FFFFFF;
+  --theme-text-qty: #AAAAAA;
+  --theme-text-price: #4CAF50;
+  --theme-font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --theme-radius-widget: 8px;
+  --theme-radius-row: 4px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: transparent !important;
+  user-select: none;
+  overflow: hidden;
+}
+
+#app {
+  background: transparent !important;
+  min-height: 100vh;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05); 
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2); 
+  border-radius: 3px;
+}
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ── Screen glow flash ──────────────────────────────────────────────── */
+.glow-fade-enter-active  { animation: glow-pulse 1.8s ease-out forwards; }
+.glow-fade-leave-active  { transition: opacity 0.4s; }
+.glow-fade-leave-to      { opacity: 0; }
+
+@keyframes glow-pulse {
+  0%   { opacity: 0; }
+  15%  { opacity: 1; }
+  60%  { opacity: 0.7; }
+  100% { opacity: 0; }
+}
+
+/* ── Loading bar animations ──────────────────────────────────────────── */
+.loading-bar-shimmer {
+  background: linear-gradient(90deg, rgba(96,165,250,0.15) 0%, rgba(96,165,250,0.7) 40%, rgba(168,148,255,0.7) 60%, rgba(96,165,250,0.15) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite linear;
+}
+.loading-bar-done {
+  background: linear-gradient(90deg, #4ade80, #60a5fa);
+  transition: background 0.4s;
+}
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Loading overlay transition ──────────────────────────────────────── */
+.loading-fade-enter-active { transition: opacity 0.3s; }
+.loading-fade-leave-active { transition: opacity 0.6s; }
+.loading-fade-enter-from,
+.loading-fade-leave-to     { opacity: 0; }
+
+/* ── Settings Modal ─────────────────────────────────────────────────── */
+.section-title {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.22);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.setting-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.3;
+}
+.setting-desc {
+  font-size: 10px;
+  color: rgba(255,255,255,0.32);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+.setting-select {
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.8);
+  border-radius: 8px;
+  padding: 4px 8px;
+  cursor: pointer;
+  outline: none;
+  min-width: 120px;
+}
+.setting-select:focus {
+  border-color: rgba(96,165,250,0.5);
+}
+.setting-select option {
+  background: #14121f;
+  color: rgba(255,255,255,0.85);
+}
+
+/* Toggle switch */
+.toggle {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+}
+.toggle input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.toggle-track {
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  position: relative;
+  transition: background 0.2s, border-color 0.2s;
+}
+.toggle-track::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 12px;
+  height: 12px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 50%;
+  transition: transform 0.2s, background 0.2s;
+}
+.toggle input:checked + .toggle-track {
+  background: rgba(96,165,250,0.35);
+  border-color: rgba(96,165,250,0.6);
+}
+.toggle input:checked + .toggle-track::after {
+  transform: translateX(16px);
+  background: #60a5fa;
+}
