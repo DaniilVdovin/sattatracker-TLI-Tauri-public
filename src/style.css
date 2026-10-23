@@ -1,7 +1,25 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/inter-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/inter-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
 
 :root {
-  --theme-bg-widget: rgba(30, 30, 30, 0.85); /* fallback background */
+  --theme-bg-widget: rgba(30, 30, 30, 0.85);
   --theme-bg-row: rgba(45, 45, 45, 0.8);
   --theme-icon-bg: rgba(60, 60, 60, 0.8);
   --theme-border-color: #444444;
@@ -32,17 +50,16 @@ html, body {
   height: 6px;
 }
 .custom-scroll::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05); 
+  background: rgba(255, 255, 255, 0.05);
 }
 .custom-scroll::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2); 
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 3px;
 }
 .custom-scroll::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.3);
 }
 
-/* ── Screen glow flash ──────────────────────────────────────────────── */
 .glow-fade-enter-active  { animation: glow-pulse 1.8s ease-out forwards; }
 .glow-fade-leave-active  { transition: opacity 0.4s; }
 .glow-fade-leave-to      { opacity: 0; }
@@ -54,7 +71,6 @@ html, body {
   100% { opacity: 0; }
 }
 
-/* ── Loading bar animations ──────────────────────────────────────────── */
 .loading-bar-shimmer {
   background: linear-gradient(90deg, rgba(96,165,250,0.15) 0%, rgba(96,165,250,0.7) 40%, rgba(168,148,255,0.7) 60%, rgba(96,165,250,0.15) 100%);
   background-size: 200% 100%;
@@ -69,13 +85,11 @@ html, body {
   100% { background-position: -200% 0; }
 }
 
-/* ── Loading overlay transition ──────────────────────────────────────── */
 .loading-fade-enter-active { transition: opacity 0.3s; }
 .loading-fade-leave-active { transition: opacity 0.6s; }
 .loading-fade-enter-from,
 .loading-fade-leave-to     { opacity: 0; }
 
-/* ── Settings Modal ─────────────────────────────────────────────────── */
 .section-title {
   font-size: 9px;
   font-weight: 700;
@@ -124,7 +138,6 @@ html, body {
   color: rgba(255,255,255,0.85);
 }
 
-/* Toggle switch */
 .toggle {
   position: relative;
   display: inline-flex;

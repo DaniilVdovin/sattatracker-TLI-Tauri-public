@@ -33,12 +33,15 @@
           : 'bottom-full left-0 rounded-t-md cursor-move min-w-[100px]',
       ]"
     >
-      <span
-        class="material-symbols-outlined opacity-70 hover:opacity-100 cursor-pointer text-[14px] leading-none z-50 relative pointer-events-auto"
+      <svg
+        class="opacity-70 hover:opacity-100 cursor-pointer z-50 relative pointer-events-auto"
+        width="14" height="14" viewBox="0 0 24 24" fill="currentColor"
         @click.stop="popOutWidget"
         :title="isStandalone ? 'Прикрепить обратно' : 'Открепить'"
-        >{{ isStandalone ? "close_fullscreen" : "open_in_new" }}</span
       >
+        <path v-if="isStandalone" d="M22 3.41L16.71 8.7 20 12h-8V4l3.29 3.29L20.59 2 22 3.41zM3.41 22l5.29-5.29L12 20v-8H4l3.29 3.29L2 20.59 3.41 22z" />
+        <path v-else d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+      </svg>
       <span
         v-bind="isStandalone ? { 'data-tauri-drag-region': '' } : {}"
         class="flex-1 min-w-[100px] whitespace-nowrap"

@@ -29,7 +29,7 @@ impl LogParser {
             init_bag_regex:    Regex::new(r"BagMgr@:InitBagData\s+PageId\s*=\s*(\d+)\s+SlotId\s*=\s*(\d+)\s+ConfigBaseId\s*=\s*(\d+)\s+Num\s*=\s*(\d+)").unwrap(),
             modify_bag_regex:  Regex::new(r"BagMgr@:Modfy BagItem\s+PageId\s*=\s*(\d+)\s+SlotId\s*=\s*(\d+)\s+ConfigBaseId\s*=\s*(\d+)\s+Num\s*=\s*(\d+)").unwrap(),
             remove_bag_regex:  Regex::new(r"BagMgr@:RemoveBagItem\s+PageId\s*=\s*(\d+)\s+SlotId\s*=\s*(\d+)").unwrap(),
-            item_add_regex:    Regex::new(r"ItemChange@ Add Id=(\d+)[\d_a-z-]* BagNum=(\d+) PageId=(-?\d+) SlotId=(-?\d+)").unwrap(),
+            item_add_regex:    Regex::new(r"ItemChange@ Add Id=(\d+)[\d_a-z-]* BagNum=(\d+)\s+(?:in\s+)?PageId=(-?\d+) SlotId=(-?\d+)").unwrap(),
 
             proto_start_regex: Regex::new(r"ItemChange@ ProtoName=(\w+) start").unwrap(),
             proto_end_regex:   Regex::new(r"ItemChange@ ProtoName=(\w+) end").unwrap(),

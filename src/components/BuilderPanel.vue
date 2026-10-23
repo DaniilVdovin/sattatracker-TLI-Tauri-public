@@ -121,6 +121,9 @@
               <button @click="$emit('open-settings')" class="builder-action-btn" style="--btn-color:rgba(255,255,255,0.7);--btn-bg:rgba(255,255,255,0.05);--btn-border:rgba(255,255,255,0.1);">
                 <span>⚙</span><span>Settings</span>
               </button>
+              <button @click="$emit('open-map-history')" class="builder-action-btn" style="--btn-color:#60a5fa;--btn-bg:rgba(96,165,250,0.08);--btn-border:rgba(96,165,250,0.2);">
+                <span>🗺️</span><span>Map History</span>
+              </button>
               <button @click="store.resetSession()" class="builder-action-btn" style="--btn-color:#f87171;--btn-bg:rgba(248,113,113,0.08);--btn-border:rgba(248,113,113,0.2);">
                 <span>↺</span><span>Reset Session</span>
               </button>
@@ -139,7 +142,7 @@ import { useTrackerStore } from '../stores/trackerStore';
 import { getVersion } from '@tauri-apps/api/app';
 
 defineProps<{ isOpen: boolean }>();
-defineEmits(['close', 'open-settings', 'open-history']);
+defineEmits(['close', 'open-settings', 'open-history', 'open-map-history']);
 
 const VERSION = ref('1.0.14');
 

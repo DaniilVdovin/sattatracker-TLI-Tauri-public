@@ -85,6 +85,7 @@
         @close="isBuilderOpen = false"
         @open-settings="isSettingsOpen = true; isBuilderOpen = false; settingsOpenedFromBuilder = true"
         @open-history="isHistoryOpen = true; isBuilderOpen = false"
+        @open-map-history="isMapHistoryOpen = true; isBuilderOpen = false"
       />
 
       <template v-if="!isLoading">
@@ -131,6 +132,8 @@
 
         <ItemsHistory :isOpen="isHistoryOpen" @close="isHistoryOpen = false" />
 
+        <MapHistory :isOpen="isMapHistoryOpen" @close="isMapHistoryOpen = false" />
+
       </template>
     </template>
 
@@ -143,6 +146,7 @@
     />
 
     <LowStockWarning v-if="!widgetOnlyId" />
+
 
     <WelcomeModal v-if="!widgetOnlyId" />
 
@@ -166,6 +170,7 @@ import MapExpense           from './components/MapExpense.vue';
 import ControlPanel         from './components/ControlPanel.vue';
 import LootFeed             from './components/LootFeed.vue';
 import ItemsHistory         from './components/ItemsHistory.vue';
+import MapHistory           from './components/MapHistory.vue';
 import ExtraEffectsOverlay  from './components/ExtraEffectsOverlay.vue';
 import PhysicsEffectsOverlay from './components/PhysicsEffectsOverlay.vue';
 import DebugPanel           from './components/DebugPanel.vue';
@@ -178,6 +183,7 @@ const themeStore = useThemeStore();
 
 const isSettingsOpen          = ref(false);
 const isHistoryOpen           = ref(false);
+const isMapHistoryOpen        = ref(false);
 const isBuilderOpen           = ref(false);
 const settingsOpenedFromBuilder = ref(false);
 const showDebug       = ref(false);
@@ -216,6 +222,11 @@ const widgetOnlyId = (() => {
 let unlistenEditMode: (() => void) | null = null;
 let unlistenGame:     (() => void) | null = null;
 let timerInterval:    ReturnType<typeof setInterval> | null = null;
+let saveInterval:     ReturnType<typeof setInterval> | null = null;
+
+function flushState() {
+  if (!widgetOnlyId) void store.saveStateToDisk();
+}
 
 function onSettingsClose() {
   isSettingsOpen.value = false;
@@ -233,7 +244,7 @@ let lastClickThrough = true;
 let clickThroughInterval: ReturnType<typeof setInterval> | null = null;
 
 async function updateClickThrough() {
-  if (store.isEditMode || isSettingsOpen.value || isHistoryOpen.value || isBuilderOpen.value) {
+  if (store.isEditMode || isSettingsOpen.value || isHistoryOpen.value || isMapHistoryOpen.value || isBuilderOpen.value) {
     if (lastClickThrough) { lastClickThrough = false; await invoke('set_click_through', { ignore: false }); }
     return;
   }
@@ -253,6 +264,8 @@ async function updateClickThrough() {
 }
 
 onMounted(async () => {
+  await store.loadStateFromDisk();
+
   unlistenGame = await listen<any>('game_event', (event) => {
     const e = event.payload;
     switch (e.type) {
@@ -269,7 +282,7 @@ onMounted(async () => {
         store.onZoneChange(e.level_type, e.level_id, e.is_hub ?? false);
         break;
       case 'MapStart':
-        store.resetMap(true);
+        store.resetMap(true, { levelType: e.level_type, levelId: e.level_id });
         break;
       case 'Expense':
         store.addExpense({
@@ -326,6 +339,13 @@ onMounted(async () => {
 
   clickThroughInterval = setInterval(updateClickThrough, 60);
 
+  if (!widgetOnlyId) {
+    saveInterval = setInterval(() => {
+      if (store.stateDirty) void store.saveStateToDisk();
+    }, 10000);
+    window.addEventListener('beforeunload', flushState);
+  }
+
   window.addEventListener('keydown', keydownHandler);
 });
 
@@ -334,6 +354,8 @@ onUnmounted(() => {
   if (unlistenGame)          unlistenGame();
   if (timerInterval)         clearInterval(timerInterval);
   if (clickThroughInterval)  clearInterval(clickThroughInterval);
+  if (saveInterval)          clearInterval(saveInterval);
+  window.removeEventListener('beforeunload', flushState);
   window.removeEventListener('keydown', keydownHandler);
 });
 </script>

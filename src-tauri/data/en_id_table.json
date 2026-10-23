@@ -2984,7 +2984,7 @@
         "type": "\\nCompass"
     },
     "10122": {
-        "name": "Valiant War Compass",
+        "name": "Wild War Compass",
         "type": "\\nCompass"
     },
     "10130": {
@@ -3004,11 +3004,11 @@
         "type": "\\nCompass"
     },
     "10140": {
-        "name": "Hunting Compass",
+        "name": "Hunting Astrolabe",
         "type": "\\nCompass"
     },
     "10142": {
-        "name": "General Hunting Compass",
+        "name": "General Hunting Astrolabe",
         "type": "\\nCompass"
     },
     "10150": {
@@ -3148,15 +3148,15 @@
         "type": "\\nCompass"
     },
     "10290": {
-        "name": "Pig Iron Scalpel",
+        "name": "Vorax Compass",
         "type": "\\nSeason Compass"
     },
     "10291": {
-        "name": "Sterling Silver Scalpel",
+        "name": "Scavenger Vorax Compass",
         "type": "\\nSeason Compass"
     },
     "10292": {
-        "name": "Titanium-Alloy Scalpel",
+        "name": "Consultation Vorax Compass",
         "type": "\\nSeason Compass"
     },
     "12000": {
@@ -4252,7 +4252,7 @@
         "type": "Legendary"
     },
     "113208": {
-        "name": "Truth",
+        "name": "I Am Truth",
         "type": "Legendary"
     },
     "113209": {
@@ -4312,7 +4312,7 @@
         "type": "Legendary"
     },
     "113252": {
-        "name": "Mother Goddess' Paddock",
+        "name": "Crimson Gash",
         "type": "Legendary"
     },
     "113254": {
@@ -6808,7 +6808,7 @@
         "type": "Core Organ"
     },
     "382202": {
-        "name": "Organ: Mother Goddess' Paddock",
+        "name": "Organ: Crimson Gash",
         "type": "Core Organ"
     },
     "382203": {
@@ -6972,11 +6972,11 @@
         "type": "Core Organ"
     },
     "382245": {
-        "name": "器官：莽夫的铁冠",
+        "name": "Organ: Boor's Iron Crown",
         "type": "Core Organ"
     },
     "382246": {
-        "name": "器官：溯寒者的鸣泣",
+        "name": "Organ: Coldness Tracer's Tear",
         "type": "Core Organ"
     },
     "383000": {
@@ -7804,7 +7804,7 @@
         "type": "主动技能"
     },
     "7090": {
-        "name": "Blurry Steps",
+        "name": "Swiftness Dew",
         "type": "主动技能"
     },
     "7091": {
@@ -7880,11 +7880,11 @@
         "type": "主动技能"
     },
     "7143": {
-        "name": "Life Source",
+        "name": "Life Tonic",
         "type": "主动技能"
     },
     "7144": {
-        "name": "Mana Source",
+        "name": "Mana Tonic",
         "type": "主动技能"
     },
     "7145": {
@@ -7916,7 +7916,7 @@
         "type": "主动技能"
     },
     "7156": {
-        "name": "Drinking Recovery",
+        "name": "Thirst Dew",
         "type": "主动技能"
     },
     "7157": {
@@ -7948,7 +7948,7 @@
         "type": "主动技能"
     },
     "7169": {
-        "name": "Compound Source",
+        "name": "Compound Tonic",
         "type": "主动技能"
     },
     "7170": {
@@ -8552,11 +8552,11 @@
         "type": "精密技能"
     },
     "7615": {
-        "name": "Critical Charge",
+        "name": "Emergency Aid",
         "type": "精密技能"
     },
     "7614": {
-        "name": "Auto-Charge",
+        "name": "Hyper Metabolism",
         "type": "精密技能"
     },
     "7621": {
@@ -8564,7 +8564,7 @@
         "type": "精密技能"
     },
     "7616": {
-        "name": "Restoration Charge",
+        "name": "Medicinal Buildup",
         "type": "精密技能"
     },
     "7622": {
@@ -9876,15 +9876,15 @@
         "type": "Compass"
     },
     "10300": {
-        "name": "Lunaria Compass",
+        "name": "Dim Lunar Stone",
         "type": "Compass"
     },
     "10301": {
-        "name": "Moonlit Casket Lunaria Compass",
+        "name": "Bright Lunar Stone",
         "type": "Compass"
     },
     "10302": {
-        "name": "Lunar Stele Compass",
+        "name": "Dazzling Lunar Stone",
         "type": "Compass"
     },
     "10303": {
@@ -10192,7 +10192,7 @@
         "type": "Memory Revival Material"
     },
     "392047": {
-        "name": "Creation Compass",
+        "name": "+1 Max Youga Count in the Universe",
         "type": "Compass"
     },
     "392048": {
@@ -10252,7 +10252,7 @@
         "type": "Compass"
     },
     "393000": {
-        "name": "Moonlight Thread - Epic",
+        "name": "Moonlit Thread - Epic",
         "type": "Currency"
     },
     "394001": {
@@ -10374,5 +10374,1309 @@
     "6225": {
         "name": "Immortality Concoction Recipe",
         "type": "Currency"
+    },
+    "7231": {
+        "name": "Module: Goblin Priest",
+        "type": "Modularization Skill"
+    },
+    "7232": {
+        "name": "Module: Trog 2nd General",
+        "type": "Modularization Skill"
+    },
+    "7234": {
+        "name": "Module: Dwarven Automaton",
+        "type": "Modularization Skill"
+    },
+    "7235": {
+        "name": "Module: Trog Mage",
+        "type": "Modularization Skill"
+    },
+    "7236": {
+        "name": "Module: Goblin Priest of Elements",
+        "type": "Modularization Skill"
+    },
+    "7237": {
+        "name": "Module: Medium Ember Automaton",
+        "type": "Modularization Skill"
+    },
+    "7238": {
+        "name": "Module: Huge Ember Automaton",
+        "type": "Modularization Skill"
+    },
+    "7239": {
+        "name": "Module: Ent Great Elder",
+        "type": "Modularization Skill"
+    },
+    "7240": {
+        "name": "Module: Ratlin Stormer Captain",
+        "type": "Modularization Skill"
+    },
+    "7241": {
+        "name": "Module: Chief Machinist",
+        "type": "Modularization Skill"
+    },
+    "7242": {
+        "name": "Module: Lean Phantom",
+        "type": "Modularization Skill"
+    },
+    "7243": {
+        "name": "Module: God of Swords",
+        "type": "Modularization Skill"
+    },
+    "7244": {
+        "name": "Module: Tyrant",
+        "type": "Modularization Skill"
+    },
+    "7245": {
+        "name": "Module: Ichi Storm",
+        "type": "Modularization Skill"
+    },
+    "7246": {
+        "name": "Module: Sand Giant",
+        "type": "Modularization Skill"
+    },
+    "7247": {
+        "name": "Module: Einherjar Elder Sage",
+        "type": "Modularization Skill"
+    },
+    "7248": {
+        "name": "Module: Aember Winged Beast",
+        "type": "Modularization Skill"
+    },
+    "7249": {
+        "name": "Module: Punisher",
+        "type": "Modularization Skill"
+    },
+    "7252": {
+        "name": "Frostclaw",
+        "type": "Active Skill"
+    },
+    "7253": {
+        "name": "Firebird",
+        "type": "Active Skill"
+    },
+    "7255": {
+        "name": "Earthshatter",
+        "type": "Active Skill"
+    },
+    "7256": {
+        "name": "Aember Rain",
+        "type": "Active Skill"
+    },
+    "7257": {
+        "name": "Molten Barrage",
+        "type": "Active Skill"
+    },
+    "7258": {
+        "name": "All-Out Volley",
+        "type": "Active Skill"
+    },
+    "7259": {
+        "name": "Rockfall",
+        "type": "Active Skill"
+    },
+    "7260": {
+        "name": "Thunderfall",
+        "type": "Active Skill"
+    },
+    "7261": {
+        "name": "Kinetic Thrust",
+        "type": "Active Skill"
+    },
+    "7262": {
+        "name": "Groundslam",
+        "type": "Active Skill"
+    },
+    "7263": {
+        "name": "Overstrike",
+        "type": "Active Skill"
+    },
+    "7264": {
+        "name": "Searing Crush",
+        "type": "Active Skill"
+    },
+    "7265": {
+        "name": "Sweep",
+        "type": "Active Skill"
+    },
+    "7266": {
+        "name": "Rootsurge",
+        "type": "Active Skill"
+    },
+    "7267": {
+        "name": "Blitz Strike",
+        "type": "Active Skill"
+    },
+    "7268": {
+        "name": "Burst Hammer",
+        "type": "Active Skill"
+    },
+    "7269": {
+        "name": "Firebomb",
+        "type": "Active Skill"
+    },
+    "7270": {
+        "name": "Pyromania",
+        "type": "Active Skill"
+    },
+    "7271": {
+        "name": "Flickering Shadow",
+        "type": "Active Skill"
+    },
+    "7272": {
+        "name": "Sin of the Fallen",
+        "type": "Active Skill"
+    },
+    "7273": {
+        "name": "Blade of Glory",
+        "type": "Active Skill"
+    },
+    "7274": {
+        "name": "High Court Covenant",
+        "type": "Active Skill"
+    },
+    "7275": {
+        "name": "Ravaging Slash",
+        "type": "Active Skill"
+    },
+    "7276": {
+        "name": "Auric Shot",
+        "type": "Active Skill"
+    },
+    "7278": {
+        "name": "Gravelshot",
+        "type": "Active Skill"
+    },
+    "7279": {
+        "name": "Divine Judgment",
+        "type": "Active Skill"
+    },
+    "7280": {
+        "name": "Javelin of Judgment",
+        "type": "Active Skill"
+    },
+    "7281": {
+        "name": "Spikeburst",
+        "type": "Active Skill"
+    },
+    "7282": {
+        "name": "Tailsweep",
+        "type": "Active Skill"
+    },
+    "7283": {
+        "name": "Impaling Thrust",
+        "type": "Active Skill"
+    },
+    "7284": {
+        "name": "Twinstrike",
+        "type": "Active Skill"
+    },
+    "7285": {
+        "name": "Undercurrent",
+        "type": "Active Skill"
+    },
+    "7286": {
+        "name": "Resistance Dew",
+        "type": "Active Skill"
+    },
+    "7287": {
+        "name": "Steadfast Dew",
+        "type": "Active Skill"
+    },
+    "7288": {
+        "name": "Nimbleness Dew",
+        "type": "Active Skill"
+    },
+    "7289": {
+        "name": "Tenacity Dew",
+        "type": "Active Skill"
+    },
+    "7290": {
+        "name": "Tortoise Shell Distillate",
+        "type": "Active Skill"
+    },
+    "7291": {
+        "name": "Scorpion Stinger Distillate",
+        "type": "Active Skill"
+    },
+    "7292": {
+        "name": "Putrid Toad Distillate",
+        "type": "Active Skill"
+    },
+    "7293": {
+        "name": "Saltpeter Mushroom Distillate",
+        "type": "Active Skill"
+    },
+    "7294": {
+        "name": "Fire Lizard Distillate",
+        "type": "Active Skill"
+    },
+    "7295": {
+        "name": "White Rhino Distillate",
+        "type": "Active Skill"
+    },
+    "7296": {
+        "name": "Thunder Wood Distillate",
+        "type": "Active Skill"
+    },
+    "7317": {
+        "name": "Ominous",
+        "type": "Active Skill"
+    },
+    "7339": {
+        "name": "Thornfield",
+        "type": "Active Skill"
+    },
+    "7340": {
+        "name": "Tidewell",
+        "type": "Active Skill"
+    },
+    "7341": {
+        "name": "Fallen Star",
+        "type": "Active Skill"
+    },
+    "7342": {
+        "name": "Storm Field",
+        "type": "Active Skill"
+    },
+    "7343": {
+        "name": "Nether Grasp",
+        "type": "Active Skill"
+    },
+    "7344": {
+        "name": "Commanding Warcry",
+        "type": "Active Skill"
+    },
+    "7345": {
+        "name": "Agony Dew",
+        "type": "Active Skill"
+    },
+    "7346": {
+        "name": "Prism Butterfly Distillate",
+        "type": "Active Skill"
+    },
+    "7347": {
+        "name": "Voltaic Ripple",
+        "type": "Active Skill"
+    },
+    "7348": {
+        "name": "Psionic Missile",
+        "type": "Active Skill"
+    },
+    "7349": {
+        "name": "Homing Frost Bolt",
+        "type": "Active Skill"
+    },
+    "7350": {
+        "name": "Splitting Lightning Bolt",
+        "type": "Active Skill"
+    },
+    "7351": {
+        "name": "Moon's Dawn",
+        "type": "Active Skill"
+    },
+    "7353": {
+        "name": "Blazing Meteor",
+        "type": "Active Skill"
+    },
+    "7354": {
+        "name": "Hound's Fangs",
+        "type": "Active Skill"
+    },
+    "7355": {
+        "name": "Stasis Vault",
+        "type": "Active Skill"
+    },
+    "7356": {
+        "name": "Supreme Descent",
+        "type": "Active Skill"
+    },
+    "7357": {
+        "name": "Selves of All Realms",
+        "type": "Active Skill"
+    },
+    "7624": {
+        "name": "Channeled Depths",
+        "type": "Support Skill"
+    },
+    "7625": {
+        "name": "Turmoil Burst",
+        "type": "Support Skill"
+    },
+    "7626": {
+        "name": "Tangle Surge",
+        "type": "Support Skill"
+    },
+    "7627": {
+        "name": "Elemental Conversion",
+        "type": "Support Skill"
+    },
+    "7628": {
+        "name": "Frostbloom",
+        "type": "Support Skill"
+    },
+    "7629": {
+        "name": "Blazing Scorch",
+        "type": "Support Skill"
+    },
+    "7630": {
+        "name": "Rising Evil",
+        "type": "Support Skill"
+    },
+    "7631": {
+        "name": "Honed Edge",
+        "type": "Support Skill"
+    },
+    "7632": {
+        "name": "Vigilant Guard",
+        "type": "Support Skill"
+    },
+    "7633": {
+        "name": "Dual Onslaught",
+        "type": "Support Skill"
+    },
+    "7634": {
+        "name": "Blessed Leap",
+        "type": "Support Skill"
+    },
+    "7635": {
+        "name": "Phantom Trace",
+        "type": "Support Skill"
+    },
+    "7636": {
+        "name": "Mana Convergence",
+        "type": "Support Skill"
+    },
+    "7637": {
+        "name": "Vigor Restitution",
+        "type": "Support Skill"
+    },
+    "7638": {
+        "name": "Exhaustion",
+        "type": "Support Skill"
+    },
+    "7639": {
+        "name": "Sluggish",
+        "type": "Support Skill"
+    },
+    "7640": {
+        "name": "Still Charge",
+        "type": "Support Skill"
+    },
+    "7641": {
+        "name": "Empowered Channeling",
+        "type": "Support Skill"
+    },
+    "7642": {
+        "name": "Target Projection",
+        "type": "Support Skill"
+    },
+    "7643": {
+        "name": "Windbolt",
+        "type": "Support Skill"
+    },
+    "7644": {
+        "name": "Finisher Combo",
+        "type": "Support Skill"
+    },
+    "7645": {
+        "name": "Empowered Insight",
+        "type": "Support Skill"
+    },
+    "7646": {
+        "name": "Swiftstep Spell",
+        "type": "Support Skill"
+    },
+    "7647": {
+        "name": "Seize",
+        "type": "Support Skill"
+    },
+    "7648": {
+        "name": "Reckless Aggression",
+        "type": "Support Skill"
+    },
+    "7649": {
+        "name": "Weakness Infiltration",
+        "type": "Support Skill"
+    },
+    "7650": {
+        "name": "Resurgence",
+        "type": "Support Skill"
+    },
+    "7651": {
+        "name": "Mighty Bulwark",
+        "type": "Support Skill"
+    },
+    "7652": {
+        "name": "Dulled Edge",
+        "type": "Support Skill"
+    },
+    "7653": {
+        "name": "Resilient",
+        "type": "Support Skill"
+    },
+    "7654": {
+        "name": "Thrive in Adversity",
+        "type": "Support Skill"
+    },
+    "7655": {
+        "name": "Empowered Element",
+        "type": "Support Skill"
+    },
+    "7656": {
+        "name": "Inspiring Warcry",
+        "type": "Support Skill"
+    },
+    "7657": {
+        "name": "Deepened Curse",
+        "type": "Support Skill"
+    },
+    "7985": {
+        "name": "Frigid Transmission: Thin Ice (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "7986": {
+        "name": "Chromatic Shot: Lightchaser (Magnificent)",
+        "type": "Magnificent Support Skill"
+    },
+    "7987": {
+        "name": "Chromatic Shot: Splendor (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "7988": {
+        "name": "Modularization: Shared Burden (Magnificent)",
+        "type": "Magnificent Support Skill"
+    },
+    "7989": {
+        "name": "Modularization: Resonance (Magnificent)",
+        "type": "Magnificent Support Skill"
+    },
+    "7990": {
+        "name": "Modularization: Cluster (Magnificent)",
+        "type": "Magnificent Support Skill"
+    },
+    "7991": {
+        "name": "Modularization: Superconductivity (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "7992": {
+        "name": "Modularization: Calibrate (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "7993": {
+        "name": "Modularization: Compress (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "7994": {
+        "name": "Modularization: Sever (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "7995": {
+        "name": "Thornfield: Sacrifice (Magnificent)",
+        "type": "Magnificent Support Skill"
+    },
+    "7996": {
+        "name": "Thornfield: Retribution (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "7997": {
+        "name": "Tidewell: Torrent (Magnificent)",
+        "type": "Magnificent Support Skill"
+    },
+    "7998": {
+        "name": "Tidewell: Undertow (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "7999": {
+        "name": "Haunting Abomination: Ravage (Magnificent)",
+        "type": "Magnificent Support Skill"
+    },
+    "8100": {
+        "name": "Fallen Star: Crush (Magnificent)",
+        "type": "Magnificent Support Skill"
+    },
+    "8101": {
+        "name": "Fallen Star: Starfall (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "8102": {
+        "name": "Fallen Star: Gravity (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "8103": {
+        "name": "Nether Grasp: Devour (Magnificent)",
+        "type": "Magnificent Support Skill"
+    },
+    "8104": {
+        "name": "Nether Grasp: Extermination (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "8105": {
+        "name": "Flame Jet: Scorching Wave (Magnificent)",
+        "type": "Magnificent Support Skill"
+    },
+    "8106": {
+        "name": "Storm Field: Thunderclap (Magnificent)",
+        "type": "Magnificent Support Skill"
+    },
+    "8107": {
+        "name": "Storm Field: Conduction (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "8108": {
+        "name": "Chromatic Shot: Condensed Cold (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "8109": {
+        "name": "Chromatic Shot: Condensed Fire (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "8110": {
+        "name": "Chromatic Shot: Condensed Lightning (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "8111": {
+        "name": "Chromatic Shot: Condensed Erosion (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "8112": {
+        "name": "Voltaic Ripple: Jolt (Magnificent)",
+        "type": "Magnificent Support Skill"
+    },
+    "8113": {
+        "name": "Voltaic Ripple: Turmoil (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "8114": {
+        "name": "Voltaic Ripple: Afterwave (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "8115": {
+        "name": "Psionic Missile: Shockwave (Magnificent)",
+        "type": "Magnificent Support Skill"
+    },
+    "8116": {
+        "name": "Psionic Missile: Convergence (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "8117": {
+        "name": "Psionic Missile: Emission (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "8118": {
+        "name": "Homing Frost Bolt: Frost Barb (Magnificent)",
+        "type": "Magnificent Support Skill"
+    },
+    "8119": {
+        "name": "Homing Frost Bolt: Deep Chill (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "8120": {
+        "name": "Splitting Lightning Bolt: Swift Bolt (Magnificent)",
+        "type": "Magnificent Support Skill"
+    },
+    "8121": {
+        "name": "Splitting Lightning Bolt: Disintegration (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "8122": {
+        "name": "Moon's Dawn: Resplendence (Magnificent)",
+        "type": "Magnificent Support Skill"
+    },
+    "8123": {
+        "name": "Moon's Dawn: Illumination (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "8124": {
+        "name": "Hound's Fangs: Bone Piercer (Magnificent)",
+        "type": "Magnificent Support Skill"
+    },
+    "8125": {
+        "name": "Hound's Fangs: Sharp Teeth (Magnificent)",
+        "type": "Magnificent Support Skill"
+    },
+    "8126": {
+        "name": "Hound's Fangs: Volley (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "8127": {
+        "name": "Hound's Fangs: Pounce (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "8128": {
+        "name": "Blazing Meteor: Spark (Magnificent)",
+        "type": "Magnificent Support Skill"
+    },
+    "8129": {
+        "name": "Blazing Meteor: Aftershock (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "8130": {
+        "name": "Blazing Meteor: Detonation (Noble)",
+        "type": "Noble Support Skill"
+    },
+    "10104": {
+        "name": "Colorful Fluorescent Compass (Artifact)",
+        "type": "Compass"
+    },
+    "10263": {
+        "name": "Full Load Outlaw Compass",
+        "type": "Compass"
+    },
+    "10323": {
+        "name": "Evernight Vigil Compass",
+        "type": "Compass"
+    },
+    "10330": {
+        "name": "Darkiron Shackles",
+        "type": "Season Compass"
+    },
+    "10331": {
+        "name": "Mercury Shackles",
+        "type": "Season Compass"
+    },
+    "10332": {
+        "name": "Redgold Shackles",
+        "type": "Season Compass"
+    },
+    "111413": {
+        "name": "On the Sublime",
+        "type": "Legendary Gear"
+    },
+    "112358": {
+        "name": "First Aember",
+        "type": "Legendary Gear"
+    },
+    "112444": {
+        "name": "Illusory Chimera",
+        "type": "Legendary Gear"
+    },
+    "113287": {
+        "name": "Immolating World",
+        "type": "Legendary Gear"
+    },
+    "113288": {
+        "name": "Realm Beyond Reach",
+        "type": "Legendary Gear"
+    },
+    "350025": {
+        "name": "Micro Fate: Terra Charge Recovery Speed",
+        "type": "Destiny"
+    },
+    "350325": {
+        "name": "Medium Fate: Terra Charge Recovery Speed",
+        "type": "Destiny"
+    },
+    "350758": {
+        "name": "Dual Kismet: Banshee",
+        "type": "Destiny"
+    },
+    "350760": {
+        "name": "Dual Kismet: Ribbon",
+        "type": "Destiny"
+    },
+    "380111": {
+        "name": "Organ Teratoma",
+        "type": "Vorax Exchange Material"
+    },
+    "381085": {
+        "name": "Flawless Heart: Bewildered",
+        "type": "Flawless Heart - Buff"
+    },
+    "382247": {
+        "name": "Organ: Iron Nest",
+        "type": "Core Organ - Necklace"
+    },
+    "382248": {
+        "name": "Organ: Golden Touch",
+        "type": "Core Organ - Gloves"
+    },
+    "382249": {
+        "name": "Organ: Magmaskull",
+        "type": "Core Organ - Helmet"
+    },
+    "382250": {
+        "name": "Organ: Ralph's Dreadcrest",
+        "type": "Core Organ - Helmet"
+    },
+    "382251": {
+        "name": "Organ: Omni-Elixir Notes",
+        "type": "Core Organ - Belt"
+    },
+    "382252": {
+        "name": "Organ: Malevolent Hand",
+        "type": "Core Organ - Gloves"
+    },
+    "382253": {
+        "name": "Organ: Pantheon's Elegy",
+        "type": "Core Organ - Belt"
+    },
+    "382254": {
+        "name": "Organ: Beneath the Styx",
+        "type": "Core Organ - Boots"
+    },
+    "382255": {
+        "name": "Organ: The Three Saints",
+        "type": "Core Organ - Chest Armor"
+    },
+    "382256": {
+        "name": "Organ: Uros's Bond",
+        "type": "Core Organ - Chest Armor"
+    },
+    "382257": {
+        "name": "Organ: Contained Mind",
+        "type": "Core Organ - Helmet"
+    },
+    "393003": {
+        "name": "Lunar Fragment",
+        "type": "Universal Items"
+    },
+    "502000": {
+        "name": "Tempering Medal",
+        "type": "Tempering Medal"
+    },
+    "502001": {
+        "name": "Tempering Medal (Origin)",
+        "type": "Tempering Medal"
+    },
+    "3970300": {
+        "name": "Tartarus: Black Hole I",
+        "type": "Tartarus Skill"
+    },
+    "3970301": {
+        "name": "Tartarus: Black Hole II",
+        "type": "Tartarus Skill"
+    },
+    "3970302": {
+        "name": "Tartarus: Black Hole III",
+        "type": "Tartarus Skill"
+    },
+    "3970310": {
+        "name": "Tartarus: Thunder Spike I",
+        "type": "Tartarus Skill"
+    },
+    "3970311": {
+        "name": "Tartarus: Thunder Spike II",
+        "type": "Tartarus Skill"
+    },
+    "3970312": {
+        "name": "Tartarus: Thunder Spike III",
+        "type": "Tartarus Skill"
+    },
+    "3970320": {
+        "name": "Tartarus: Lightning Storm I",
+        "type": "Tartarus Skill"
+    },
+    "3970321": {
+        "name": "Tartarus: Lightning Storm II",
+        "type": "Tartarus Skill"
+    },
+    "3970322": {
+        "name": "Tartarus: Lightning Storm III",
+        "type": "Tartarus Skill"
+    },
+    "3970330": {
+        "name": "Tartarus: Double Thrusts I",
+        "type": "Tartarus Skill"
+    },
+    "3970331": {
+        "name": "Tartarus: Double Thrusts II",
+        "type": "Tartarus Skill"
+    },
+    "3970332": {
+        "name": "Tartarus: Double Thrusts III",
+        "type": "Tartarus Skill"
+    },
+    "3970390": {
+        "name": "Tartarus: Life Tonic I",
+        "type": "Tartarus Skill"
+    },
+    "3970391": {
+        "name": "Tartarus: Life Tonic II",
+        "type": "Tartarus Skill"
+    },
+    "3970392": {
+        "name": "Tartarus: Life Tonic III",
+        "type": "Tartarus Skill"
+    },
+    "3970410": {
+        "name": "Tartarus: Ice Lances I",
+        "type": "Tartarus Skill"
+    },
+    "3970411": {
+        "name": "Tartarus: Ice Lances II",
+        "type": "Tartarus Skill"
+    },
+    "3970412": {
+        "name": "Tartarus: Ice Lances III",
+        "type": "Tartarus Skill"
+    },
+    "3970420": {
+        "name": "Tartarus: Splitting Lightning Bolt I",
+        "type": "Tartarus Skill"
+    },
+    "3970421": {
+        "name": "Tartarus: Splitting Lightning Bolt II",
+        "type": "Tartarus Skill"
+    },
+    "3970422": {
+        "name": "Tartarus: Splitting Lightning Bolt III",
+        "type": "Tartarus Skill"
+    },
+    "3970430": {
+        "name": "Tartarus: Blazing Meteor I",
+        "type": "Tartarus Skill"
+    },
+    "3970431": {
+        "name": "Tartarus: Blazing Meteor II",
+        "type": "Tartarus Skill"
+    },
+    "3970432": {
+        "name": "Tartarus: Blazing Meteor III",
+        "type": "Tartarus Skill"
+    },
+    "3970440": {
+        "name": "Tartarus: Focused Slash I",
+        "type": "Tartarus Skill"
+    },
+    "3970441": {
+        "name": "Tartarus: Focused Slash II",
+        "type": "Tartarus Skill"
+    },
+    "3970442": {
+        "name": "Tartarus: Focused Slash III",
+        "type": "Tartarus Skill"
+    },
+    "3970450": {
+        "name": "Tartarus: Icy Blade I",
+        "type": "Tartarus Skill"
+    },
+    "3970451": {
+        "name": "Tartarus: Icy Blade II",
+        "type": "Tartarus Skill"
+    },
+    "3970452": {
+        "name": "Tartarus: Icy Blade III",
+        "type": "Tartarus Skill"
+    },
+    "3970480": {
+        "name": "Tartarus: Frigid Transmission I",
+        "type": "Tartarus Skill"
+    },
+    "3970481": {
+        "name": "Tartarus: Frigid Transmission II",
+        "type": "Tartarus Skill"
+    },
+    "3970482": {
+        "name": "Tartarus: Frigid Transmission III",
+        "type": "Tartarus Skill"
+    },
+    "3970490": {
+        "name": "Tartarus: Speed Phantom I",
+        "type": "Tartarus Skill"
+    },
+    "3970491": {
+        "name": "Tartarus: Speed Phantom II",
+        "type": "Tartarus Skill"
+    },
+    "3970492": {
+        "name": "Tartarus: Speed Phantom III",
+        "type": "Tartarus Skill"
+    },
+    "3970500": {
+        "name": "Tartarus: Blink I",
+        "type": "Tartarus Skill"
+    },
+    "3970501": {
+        "name": "Tartarus: Blink II",
+        "type": "Tartarus Skill"
+    },
+    "3970502": {
+        "name": "Tartarus: Blink III",
+        "type": "Tartarus Skill"
+    },
+    "3970510": {
+        "name": "Tartarus: Leap Attack I",
+        "type": "Tartarus Skill"
+    },
+    "3970511": {
+        "name": "Tartarus: Leap Attack II",
+        "type": "Tartarus Skill"
+    },
+    "3970512": {
+        "name": "Tartarus: Leap Attack III",
+        "type": "Tartarus Skill"
+    },
+    "3970520": {
+        "name": "Tartarus: Swift Shadow Raid I",
+        "type": "Tartarus Skill"
+    },
+    "3970521": {
+        "name": "Tartarus: Swift Shadow Raid II",
+        "type": "Tartarus Skill"
+    },
+    "3970522": {
+        "name": "Tartarus: Swift Shadow Raid III",
+        "type": "Tartarus Skill"
+    },
+    "3970530": {
+        "name": "Tartarus: Charging Warcry I",
+        "type": "Tartarus Skill"
+    },
+    "3970531": {
+        "name": "Tartarus: Charging Warcry II",
+        "type": "Tartarus Skill"
+    },
+    "3970532": {
+        "name": "Tartarus: Charging Warcry III",
+        "type": "Tartarus Skill"
+    },
+    "3970540": {
+        "name": "Tartarus: Shockwave Warcry I",
+        "type": "Tartarus Skill"
+    },
+    "3970541": {
+        "name": "Tartarus: Shockwave Warcry II",
+        "type": "Tartarus Skill"
+    },
+    "3970542": {
+        "name": "Tartarus: Shockwave Warcry III",
+        "type": "Tartarus Skill"
+    },
+    "3970550": {
+        "name": "Tartarus: Raging Warcry I",
+        "type": "Tartarus Skill"
+    },
+    "3970551": {
+        "name": "Tartarus: Raging Warcry II",
+        "type": "Tartarus Skill"
+    },
+    "3970552": {
+        "name": "Tartarus: Raging Warcry III",
+        "type": "Tartarus Skill"
+    },
+    "3970560": {
+        "name": "Tartarus: Fearless Warcry I",
+        "type": "Tartarus Skill"
+    },
+    "3970561": {
+        "name": "Tartarus: Fearless Warcry II",
+        "type": "Tartarus Skill"
+    },
+    "3970562": {
+        "name": "Tartarus: Fearless Warcry III",
+        "type": "Tartarus Skill"
+    },
+    "3970570": {
+        "name": "Tartarus: Resurrection Warcry I",
+        "type": "Tartarus Skill"
+    },
+    "3970571": {
+        "name": "Tartarus: Resurrection Warcry II",
+        "type": "Tartarus Skill"
+    },
+    "3970572": {
+        "name": "Tartarus: Resurrection Warcry III",
+        "type": "Tartarus Skill"
+    },
+    "3970590": {
+        "name": "Tartarus: Nether Grasp I",
+        "type": "Tartarus Skill"
+    },
+    "3970591": {
+        "name": "Tartarus: Nether Grasp II",
+        "type": "Tartarus Skill"
+    },
+    "3970592": {
+        "name": "Tartarus: Nether Grasp III",
+        "type": "Tartarus Skill"
+    },
+    "3970600": {
+        "name": "Tartarus: Frost Terra I",
+        "type": "Tartarus Skill"
+    },
+    "3970601": {
+        "name": "Tartarus: Frost Terra II",
+        "type": "Tartarus Skill"
+    },
+    "3970602": {
+        "name": "Tartarus: Frost Terra III",
+        "type": "Tartarus Skill"
+    },
+    "3970610": {
+        "name": "Tartarus: Wilt Spike I",
+        "type": "Tartarus Skill"
+    },
+    "3970611": {
+        "name": "Tartarus: Wilt Spike II",
+        "type": "Tartarus Skill"
+    },
+    "3970612": {
+        "name": "Tartarus: Wilt Spike III",
+        "type": "Tartarus Skill"
+    },
+    "3970620": {
+        "name": "Tartarus: Frost Spike I",
+        "type": "Tartarus Skill"
+    },
+    "3970621": {
+        "name": "Tartarus: Frost Spike II",
+        "type": "Tartarus Skill"
+    },
+    "3970622": {
+        "name": "Tartarus: Frost Spike III",
+        "type": "Tartarus Skill"
+    },
+    "3970640": {
+        "name": "塔罗斯：潮汐之泉Ⅰ",
+        "type": "Tartarus Skill"
+    },
+    "3970641": {
+        "name": "塔罗斯：潮汐之泉Ⅱ",
+        "type": "Tartarus Skill"
+    },
+    "3970642": {
+        "name": "塔罗斯：潮汐之泉Ⅲ",
+        "type": "Tartarus Skill"
+    },
+    "3970650": {
+        "name": "塔罗斯：雷暴射线Ⅰ",
+        "type": "Tartarus Skill"
+    },
+    "3970651": {
+        "name": "塔罗斯：雷暴射线Ⅱ",
+        "type": "Tartarus Skill"
+    },
+    "3970652": {
+        "name": "塔罗斯：雷暴射线Ⅲ",
+        "type": "Tartarus Skill"
+    },
+    "3970660": {
+        "name": "塔罗斯：追猎星芒Ⅰ",
+        "type": "Tartarus Skill"
+    },
+    "3970661": {
+        "name": "塔罗斯：追猎星芒Ⅱ",
+        "type": "Tartarus Skill"
+    },
+    "3970662": {
+        "name": "塔罗斯：追猎星芒Ⅲ",
+        "type": "Tartarus Skill"
+    },
+    "3980000": {
+        "name": "Origin Tartarus: Black Hole I",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980001": {
+        "name": "Origin Tartarus: Black Hole II",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980002": {
+        "name": "Origin Tartarus: Black Hole III",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980010": {
+        "name": "Origin Tartarus: Scorching Pulse I",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980011": {
+        "name": "Origin Tartarus: Scorching Pulse II",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980012": {
+        "name": "Origin Tartarus: Scorching Pulse III",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980050": {
+        "name": "Origin Tartarus: Focused Slash I",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980051": {
+        "name": "Origin Tartarus: Focused Slash II",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980052": {
+        "name": "Origin Tartarus: Focused Slash III",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980060": {
+        "name": "Origin Tartarus: Split Firebolt I",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980061": {
+        "name": "Origin Tartarus: Split Firebolt II",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980062": {
+        "name": "Origin Tartarus: Split Firebolt III",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980070": {
+        "name": "Origin Tartarus: Berserking Blade I",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980071": {
+        "name": "Origin Tartarus: Berserking Blade II",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980072": {
+        "name": "Origin Tartarus: Berserking Blade III",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980080": {
+        "name": "Origin Tartarus: Shackles of Malice I",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980081": {
+        "name": "Origin Tartarus: Shackles of Malice II",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980082": {
+        "name": "Origin Tartarus: Shackles of Malice III",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980090": {
+        "name": "Origin Tartarus: Thunder Slash I",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980091": {
+        "name": "Origin Tartarus: Thunder Slash II",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980092": {
+        "name": "Origin Tartarus: Thunder Slash III",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980100": {
+        "name": "Origin Tartarus: Frost Spike I",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980101": {
+        "name": "Origin Tartarus: Frost Spike II",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980102": {
+        "name": "Origin Tartarus: Frost Spike III",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980110": {
+        "name": "Origin Tartarus: Ice Shot I",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980111": {
+        "name": "Origin Tartarus: Ice Shot II",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980112": {
+        "name": "Origin Tartarus: Ice Shot III",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980130": {
+        "name": "Origin Tartarus: Fearless Warcry I",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980131": {
+        "name": "Origin Tartarus: Fearless Warcry II",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980132": {
+        "name": "Origin Tartarus: Fearless Warcry III",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980140": {
+        "name": "Origin Tartarus: Raging Warcry I",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980141": {
+        "name": "Origin Tartarus: Raging Warcry II",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980142": {
+        "name": "Origin Tartarus: Raging Warcry III",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980150": {
+        "name": "Origin Tartarus: Arcane Circle I",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980151": {
+        "name": "Origin Tartarus: Arcane Circle II",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980152": {
+        "name": "Origin Tartarus: Arcane Circle III",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980160": {
+        "name": "Origin Tartarus: Flame Core I",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980161": {
+        "name": "Origin Tartarus: Flame Core II",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980162": {
+        "name": "Origin Tartarus: Flame Core III",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980170": {
+        "name": "Origin Tartarus: Shadow Dash I",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980171": {
+        "name": "Origin Tartarus: Shadow Dash II",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980172": {
+        "name": "Origin Tartarus: Shadow Dash III",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980180": {
+        "name": "Origin Tartarus: Safeguard Ring I",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980181": {
+        "name": "Origin Tartarus: Safeguard Field II",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980182": {
+        "name": "Origin Tartarus: Safeguard Field III",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980190": {
+        "name": "Origin Tartarus: Bond of Archery I",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980191": {
+        "name": "Origin Tartarus: Bond of Archery II",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980192": {
+        "name": "Origin Tartarus: Bond of Archery III",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980210": {
+        "name": "Origin Tartarus: Frost Shield I",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980211": {
+        "name": "Origin Tartarus: Frost Shield II",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980212": {
+        "name": "Origin Tartarus: Frost Shield III",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980220": {
+        "name": "Origin Tartarus: Spiral Strike I",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980221": {
+        "name": "Origin Tartarus: Spiral Strike II",
+        "type": "Origin Tartarus Skill"
+    },
+    "3980222": {
+        "name": "Origin Tartarus: Spiral Strike III",
+        "type": "Origin Tartarus Skill"
     }
 }

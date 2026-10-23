@@ -16,7 +16,7 @@ const SORT_DEBOUNCE_MS: u64 = 1500;
 async fn find_season_id(log_path: &PathBuf) -> u32 {
     let file = match tokio::fs::File::open(log_path).await {
         Ok(f) => f,
-        Err(_) => return 1501,
+        Err(_) => return 1601,
     };
     let reader = BufReader::new(file);
     let mut lines_iter = reader.lines();
@@ -32,8 +32,8 @@ async fn find_season_id(log_path: &PathBuf) -> u32 {
             }
         }
     }
-    println!("[tailer] SeasonId not found in log, using default 1501");
-    1501
+    println!("[tailer] SeasonId not found in log, using default 1601");
+    1601
 }
 
 async fn count_lines(log_path: &PathBuf) -> u64 {

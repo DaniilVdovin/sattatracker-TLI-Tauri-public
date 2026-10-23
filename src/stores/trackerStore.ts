@@ -1,4 +1,36 @@
 import { defineStore } from 'pinia';
+import { invoke } from '@tauri-apps/api/core';
+import {
+  MAX_ARCHIVED_SESSIONS,
+  MAX_MAP_HISTORY,
+  MAX_RECORD_DROPS,
+  MAX_TIMELINE_POINTS,
+  type MapRecord,
+  type SessionRecord,
+  type TimelinePoint,
+} from '../types/history';
+import { sanitizeState } from '../utils/stateSanitize';
+
+function newId(): string {
+  const bytes = new Uint8Array(8);
+  crypto.getRandomValues(bytes);
+  return Array.from(bytes, b => b.toString(16).padStart(2, '0')).join('');
+}
+
+function thinTimeline(points: TimelinePoint[]): TimelinePoint[] {
+  if (points.length <= MAX_TIMELINE_POINTS) return points;
+  const out: TimelinePoint[] = [points[0]];
+  const step = (points.length - 2) / (MAX_TIMELINE_POINTS - 2);
+  for (let i = 1; i < MAX_TIMELINE_POINTS - 1; i++) out.push(points[Math.round(i * step)]);
+  out.push(points[points.length - 1]);
+  return out;
+}
+
+interface CurrentMapMeta {
+  levelType: number;
+  levelId: number;
+  startedAt: number;
+}
 
 export interface InventorySnapshotItem {
   item_id:   string;
@@ -55,6 +87,15 @@ export const useTrackerStore = defineStore('tracker', {
 
     inventoryValue: 0,
     inventoryItems: [] as InventorySnapshotItem[],
+
+    sessionId: newId(),
+    sessionStartedAt: Date.now(),
+    currentMapMeta: null as CurrentMapMeta | null,
+    mapTimeline: [] as TimelinePoint[],
+    mapHistory: [] as MapRecord[],
+    archivedSessions: [] as SessionRecord[],
+    stateDirty: false,
+    tickCounter: 0,
 
     currentMapProfit: 0,
     currentMapDrops: [] as LootItem[],
@@ -139,6 +180,169 @@ export const useTrackerStore = defineStore('tracker', {
       if (this.isTimerRunning) {
         this.sessionTimeSec++;
         this.mapTimeSec++;
+        this.tickCounter++;
+        if (this.tickCounter % 10 === 0) this.stateDirty = true;
+      }
+    },
+
+    pushTimeline() {
+      if (!this.currentMapMeta) return;
+      const last = this.mapTimeline[this.mapTimeline.length - 1];
+      const point = { t: this.mapTimeSec, v: this.currentMapProfit };
+      if (last && last.t === point.t) {
+        last.v = point.v;
+      } else {
+        this.mapTimeline.push(point);
+      }
+      if (this.mapTimeline.length > MAX_TIMELINE_POINTS * 2) {
+        this.mapTimeline = thinTimeline(this.mapTimeline);
+      }
+    },
+
+    finalizeMap() {
+      const meta = this.currentMapMeta;
+      if (!meta) return;
+      this.currentMapMeta = null;
+
+      const durationSec = this.mapTimeSec;
+      const hasActivity = this.currentMapDrops.length > 0 || this.mapExpenses.length > 0;
+      if (durationSec < 3 && !hasActivity) {
+        this.mapTimeline = [];
+        return;
+      }
+
+      const lootValue = this.currentMapDrops.reduce((a, d) => a + d.price * d.qty, 0);
+      const expenseValue = this.mapExpenses.reduce((a, e) => a + e.total, 0);
+      const drops = [...this.currentMapDrops]
+        .sort((a, b) => b.price * b.qty - a.price * a.qty)
+        .slice(0, MAX_RECORD_DROPS)
+        .map(d => ({ item_id: d.item_id, item_name: d.item_name, qty: d.qty, price: d.price }));
+
+      const record: MapRecord = {
+        id: newId(),
+        sessionId: this.sessionId,
+        levelType: meta.levelType,
+        levelId: meta.levelId,
+        startedAt: meta.startedAt,
+        endedAt: Date.now(),
+        durationSec,
+        profit: this.currentMapProfit,
+        lootValue: Math.round(lootValue * 100) / 100,
+        expenseValue: Math.round(expenseValue * 100) / 100,
+        lootCount: this.currentMapDrops.reduce((a, d) => a + d.qty, 0),
+        drops,
+        expenses: this.mapExpenses.map(e => ({ id: e.id, name: e.name, qty: e.qty, total: e.total })),
+        timeline: thinTimeline(this.mapTimeline.length ? [...this.mapTimeline] : [{ t: 0, v: 0 }]),
+      };
+
+      this.mapHistory.push(record);
+      if (this.mapHistory.length > MAX_MAP_HISTORY) {
+        this.mapHistory.splice(0, this.mapHistory.length - MAX_MAP_HISTORY);
+      }
+      this.mapTimeline = [];
+      this.stateDirty = true;
+      void this.saveStateToDisk();
+    },
+
+    archiveSession() {
+      const hasData = this.sessionMapCount > 0 || this.sessionDrops.length > 0 || this.sessionTimeSec > 5;
+      if (!hasData) return;
+      this.archivedSessions.push({
+        id: this.sessionId,
+        startedAt: this.sessionStartedAt,
+        endedAt: Date.now(),
+        timeSec: this.sessionTimeSec,
+        profit: this.totalProfit,
+        maps: this.sessionMapCount,
+        lootCount: this.sessionLootCount,
+      });
+      if (this.archivedSessions.length > MAX_ARCHIVED_SESSIONS) {
+        this.archivedSessions.splice(0, this.archivedSessions.length - MAX_ARCHIVED_SESSIONS);
+      }
+    },
+
+    buildPersistedState() {
+      const meta = this.currentMapMeta;
+      return {
+        v: 1,
+        savedAt: Date.now(),
+        session: {
+          id: this.sessionId,
+          startedAt: this.sessionStartedAt,
+          totalProfit: this.totalProfit,
+          lootCount: this.sessionLootCount,
+          mapCount: this.sessionMapCount,
+          timeSec: this.sessionTimeSec,
+          inventoryValue: this.inventoryValue,
+          drops: this.sessionDrops.map(d => ({ item_id: d.item_id, item_name: d.item_name, qty: d.qty, price: d.price })),
+        },
+        currentMap: meta
+          ? {
+              levelType: meta.levelType,
+              levelId: meta.levelId,
+              startedAt: meta.startedAt,
+              profit: this.currentMapProfit,
+              timeSec: this.mapTimeSec,
+              drops: this.currentMapDrops.map(d => ({ item_id: d.item_id, item_name: d.item_name, qty: d.qty, price: d.price })),
+              expenses: this.mapExpenses.map(e => ({ id: e.id, name: e.name, qty: e.qty, total: e.total })),
+              timeline: this.mapTimeline,
+            }
+          : null,
+        maps: this.mapHistory,
+        sessions: this.archivedSessions,
+        consumables: this.trackedConsumableIds,
+      };
+    },
+
+    async saveStateToDisk() {
+      try {
+        await invoke('save_state', { data: JSON.stringify(this.buildPersistedState()) });
+        this.stateDirty = false;
+      } catch (e) {
+        console.error('Failed to save tracker state', e);
+      }
+    },
+
+    async loadStateFromDisk() {
+      let raw: string | null = null;
+      try {
+        raw = await invoke<string | null>('load_state');
+      } catch (e) {
+        console.error('Failed to load tracker state', e);
+        return;
+      }
+      if (!raw) return;
+
+      let parsed: unknown;
+      try {
+        parsed = JSON.parse(raw);
+      } catch {
+        return;
+      }
+      const state = sanitizeState(parsed);
+      if (!state) return;
+
+      const now = Date.now();
+      this.sessionId = state.session.id;
+      this.sessionStartedAt = state.session.startedAt || now;
+      this.totalProfit = state.session.totalProfit;
+      this.sessionLootCount = state.session.lootCount;
+      this.sessionMapCount = state.session.mapCount;
+      this.sessionTimeSec = state.session.timeSec;
+      this.inventoryValue = state.session.inventoryValue;
+      this.sessionDrops = state.session.drops.map(d => ({ ...d, timestamp: 0 }));
+      this.mapHistory = state.maps;
+      this.archivedSessions = state.sessions;
+      this.trackedConsumableIds = state.consumables;
+
+      const c = state.currentMap;
+      if (c) {
+        this.currentMapMeta = { levelType: c.levelType, levelId: c.levelId, startedAt: c.startedAt || now };
+        this.currentMapProfit = c.profit;
+        this.mapTimeSec = c.timeSec;
+        this.currentMapDrops = c.drops.map(d => ({ ...d, timestamp: 0 }));
+        this.mapExpenses = c.expenses.map(e => ({ ...e, timestamp: 0 }));
+        this.mapTimeline = c.timeline;
       }
     },
 
@@ -152,6 +356,7 @@ export const useTrackerStore = defineStore('tracker', {
 
     onZoneChange(_levelType: number, levelId: number, isHub: boolean) {
       if (isHub) {
+        this.finalizeMap();
         this.currentZone = 'Town';
         if (this.pauseTimerOnHub) this.pauseSession();
       } else {
@@ -197,6 +402,8 @@ export const useTrackerStore = defineStore('tracker', {
       }
 
       this.latestDrop = taxedItem;
+      this.pushTimeline();
+      this.stateDirty = true;
     },
 
     addExpense(expense: ExpenseItem) {
@@ -209,18 +416,26 @@ export const useTrackerStore = defineStore('tracker', {
         }
         this.currentMapProfit = Math.round((this.currentMapProfit - expense.total) * 100) / 100;
         this.totalProfit      = Math.round((this.totalProfit      - expense.total) * 100) / 100;
+        this.pushTimeline();
+        this.stateDirty = true;
     },
 
     setZone(zone: string) {
       this.currentZone = zone;
     },
 
-    resetMap(fromMapStart = false) {
+    resetMap(fromMapStart = false, meta?: { levelType: number; levelId: number }) {
+      this.finalizeMap();
       this.sessionMapCount++;
       this.mapExpenses = [];
       this.currentMapProfit = 0;
       this.mapTimeSec = 0;
       this.currentMapDrops = [];
+      this.mapTimeline = [{ t: 0, v: 0 }];
+      this.currentMapMeta = meta
+        ? { levelType: meta.levelType, levelId: meta.levelId, startedAt: Date.now() }
+        : null;
+      this.stateDirty = true;
       if (fromMapStart) this.resumeSession();
 
       if (this.mapCost > 0) {
@@ -235,6 +450,10 @@ export const useTrackerStore = defineStore('tracker', {
     },
 
     resetSession() {
+      this.finalizeMap();
+      this.archiveSession();
+      this.sessionId = newId();
+      this.sessionStartedAt = Date.now();
       this.totalProfit = -this.mapCost;
       this.sessionTimeSec = 0;
       this.sessionDrops = [];
@@ -242,6 +461,8 @@ export const useTrackerStore = defineStore('tracker', {
       this.sessionMapCount = 0;
       this.inventoryValue = 0;
       this.resetMap();
+      this.stateDirty = true;
+      void this.saveStateToDisk();
     },
 
     updatePosition(widgetId: keyof typeof this.widgetPositions, x: number, y: number, w?: number, h?: number) {

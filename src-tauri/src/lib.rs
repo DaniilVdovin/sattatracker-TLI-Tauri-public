@@ -3,8 +3,10 @@ mod bag_manager;
 mod db;
 mod game_state_machine;
 mod models;
+mod net;
 mod parser;
 mod pricing;
+mod state_store;
 mod tailer;
 mod utils;
 
@@ -137,7 +139,6 @@ pub fn run() {
                 })
                 .build(),
         )
-        .plugin(tauri_plugin_opener::init())
         .setup(move |app| {
             use std::str::FromStr;
             use tauri_plugin_global_shortcut::{GlobalShortcutExt, Shortcut};
@@ -215,6 +216,8 @@ pub fn run() {
             get_log_path,
             get_cursor_position,
             get_all_prices,
+            state_store::save_state,
+            state_store::load_state,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
